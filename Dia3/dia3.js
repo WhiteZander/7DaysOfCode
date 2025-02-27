@@ -6,7 +6,7 @@ let nuevaTecnologia="";
 
 console.log (area);
 
-
+//Empieza el programa
 
 eligeArea();
 console.log(especialidadCorrecto());
@@ -14,7 +14,7 @@ eligeEspecialidad();
 mensajeAreaFinal ();
 nuevaTecnologiaFn();
 
-    while(nuevaTecnologia=="ok"){
+    while(nuevaTecnologia=="ok"){ //Si responde ok, puede ingresar nueva tecnología
 
         let ingresaTecnología = prompt("Ingresa el nombre de la tecnología");
         alert(`${ingresaTecnología} Es bastante genial`)
@@ -25,9 +25,9 @@ nuevaTecnologiaFn();
 
 alert("Mucha suerte");
 
+//Termina
 
-
-function eligeArea(){
+function eligeArea(){ //Elige entre back/front-end y sus tecnologías
 while(true){
     area = prompt("¿Quieres estudiar Front-End o Back-End?")
     area = reemplazar(area);
@@ -47,7 +47,7 @@ if (area=="frontend"){
 }
 }
 
-function especialidadCorrecto (){
+function especialidadCorrecto (){ //corrige la variable a la que previamente se le quitó el formato y le da mejor aspecto
 
    
 
@@ -63,7 +63,7 @@ function especialidadCorrecto (){
             return buenNombre="Java";
 }}
 
-function eligeEspecialidad(){
+function eligeEspecialidad(){ //elige entre el area previa y full stack-previene que se ingrese un valor incorrecto en la sección previa
 
     if (especialidadCorrecto()===undefined){
         alert("Ingresa un valor válido");
@@ -77,7 +77,7 @@ function eligeEspecialidad(){
     return especialidadCorrecto();
 } 
 
-function areaFinal (){
+function areaFinal (){ // /corrige la variable a la que previamente se le quitó el formato y le da mejor aspecto
     switch (path){
         case "frontend":
             return buenNombre="Front-End";
@@ -92,7 +92,7 @@ function areaFinal (){
 
 }
 
-function mensajeAreaFinal (){
+function mensajeAreaFinal (){//mensaje de felicitacion-previene que se ingrese un valor incorrecto en la sección previa
     if (areaFinal()===undefined){
         alert("Ingresa un valor válido");
         eligeEspecialidad();
@@ -102,13 +102,13 @@ function mensajeAreaFinal (){
 }
 
 
-function nuevaTecnologiaFn(){
+function nuevaTecnologiaFn(){//previene errores de mayusculas o espacios al seleccionar "ok"
     nuevaTecnologia=prompt("¿Hay alguna otra tecnología que te gustaría aprender? --Responde ok si tu respuesta es positiva--")
     nuevaTecnologia=reemplazar(nuevaTecnologia);
     return nuevaTecnologia;
     }
 
-function reemplazar (texto) {
+function reemplazar (texto) {//quita formato de texto para minimizar errores de visualizacion
 
 
     let quitaAcentos = texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
